@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Tri_Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="login-card">
+        <h2>Login</h2>
+        <p>Welcome to Tri_Developer</p>
+        <form id="loginForm">
+            <input type="email" id="emailInput" placeholder="Email Address" required>
+            <input type="password" id="passwordInput" placeholder="Password" required>
+            <div id="errorDiv" class="error-message"></div>
+            <button type="button" onclick="validateLogin()">Login</button>
+        </form>
+        <div class="footer-links">
+            <p>Don't have an account? <a href="signup.html">Create Account</a></p>
+        </div>
+    </div>
+
+    <script>
+        console.log("Log: Login page loaded via external CSS.");
+        function validateLogin() {
+            var email = document.getElementById("emailInput").value;
+            var password = document.getElementById("passwordInput").value;
+            var errorDiv = document.getElementById("errorDiv");
+            if (email === "" || password === "") {
+                errorDiv.innerText = "Please fill in all fields!";
+                errorDiv.style.display = "block";
+            } else if (password.length < 6) {
+                errorDiv.innerText = "Password must be at least 6 characters!";
+                errorDiv.style.display = "block";
+            } else {
+                errorDiv.style.display = "none";
+                alert("Login Successful!");
+                window.location.href = "home.html"; 
+            }
+        }
+    </script>
+</body>
+</html>

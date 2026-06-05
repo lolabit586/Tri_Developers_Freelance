@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Tri_Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="login-card">
+        <h2>Contact Us</h2>
+        <p>Send us a message</p>
+        <form id="contactForm">
+            <input type="text" id="contactName" placeholder="Your Name" required>
+            <input type="email" id="contactEmail" placeholder="Email Address" required>
+            <textarea id="contactMessage" placeholder="How can we help you?" rows="4" required></textarea>
+            <div id="contactError" class="error-message"></div>
+            <button type="button" onclick="sendMessage()">Send Message</button>
+        </form>
+        <div class="footer-links">
+            <a href="home.html">Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        console.log("Log: Contact page loaded via external CSS.");
+        function sendMessage() {
+            var name = document.getElementById("contactName").value;
+            var email = document.getElementById("contactEmail").value;
+            var message = document.getElementById("contactMessage").value;
+            var errorDiv = document.getElementById("contactError");
+            if (name === "" || email === "" || message === "") {
+                errorDiv.innerText = "Please fill in all fields before sending!";
+                errorDiv.style.display = "block";
+            } else {
+                errorDiv.style.display = "none";
+                alert("Thank you! Sent successfully.");
+                document.getElementById("contactForm").reset();
+            }
+        }
+    </script>
+</body>
+</html>
