@@ -1,0 +1,183 @@
+   
+    /*  body design  */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: tohoma;
+        background-color: #E1D4C2;
+        color: #6E473B;
+
+        /* for nav */
+        padding-bottom: 70px;
+    }
+
+    /* hero section desgin */
+    .hero {
+        height: 40vh;
+        /* background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)); */
+        background: #6E473B;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* text over image */
+    .hero-content h1 {
+        color: white;
+        font-size: 50px;
+        /* 3rem */
+        margin-bottom: 15px;
+    }
+
+    .hero-content p {
+        color: white;
+        font-size: 16.2px;
+        /* 1.2rem */
+        margin-bottom: 25px;
+    }
+
+    /* search box */
+    .search-box {
+        display: flex;
+        width: 500px;
+        max-width: 90%
+    }
+
+    .search-box input {
+        flex: 1;
+        padding: 15px;
+        border: none;
+        /* الاطار حول المخلات*/
+        outline: none;
+        /* لو اردنا اخفاء الاطار الاسود يلي يظهر على مرب الادخال نستخدم السطر التالي*/
+    }
+
+    .search-box button {
+        background: #ae6c58;
+        color: white;
+        border: none;
+        padding: 15px 25px;
+        cursor: pointer;
+    }
+
+    /* avaliable services title */
+    .services {
+        padding: 80px 65px;
+    }
+
+    .services h2 {
+        color: #6E473B;
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 40px;
+    }
+
+    /* services card network */
+    .services-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        /* grid-template-columns: 1fr 1fr 1fr; */
+        gap: 30px;
+    }
+
+    /* services card network */
+    .service-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        /* في حال زاد المحتوى عن الصندوق */
+        transition: 0.4s;
+        /* box-shadow: 0 4px 15px rgba(0, 0, 0, 1); */
+
+        /* أضفته من اجل عند البحث عن الخدمه فنها تظهر بشكل مناسب  عند استخدام js*/
+        margin: auto;
+        max-width: 400px;
+    }
+
+    /* service image desgin */
+    .service-card img {
+        width: 100%;
+        /* العرض بالنسبه للبطاقه فقط وليس الموقع بأكمله */
+        height: 230px;
+        object-fit: cover;
+        transition: 0.5s;
+    }
+
+    /* card contain desgin */
+    /* heading desgin */
+    .service-card h3 {
+        padding: 10px;
+        text-align: center;
+    }
+
+    /* paragraph desgin */
+    .service-card p {
+        padding: 0px 15px 20px 20px;
+        text-align: center;
+    }
+
+    /* service information design */
+    .service-info {
+        padding: 5px;
+        text-align: center;
+    }
+
+    /* service category design */
+    .category {
+        background: #BEB5A9;
+        padding: 5px;
+        border-radius: 20px;
+        font-size: 10px;
+    }
+
+    /* service rating design */
+    .rating {
+        margin-top: 10px;
+        color: #A78D78;
+    }
+
+    /* service price design */
+    .price {
+        margin-top: 15px;
+        font-weight: bold;
+        color: #291C0E;
+        text-align: center;
+    }
+
+    /* التأثير عند المرور على بطاقة الخدمه */
+    .service-card:hover {
+        /* transform: translateY(-10px);       /* تجعل بطاقة الخمة ترتفع قليلا عن المرور عليها */
+        box-shadow: 0px 15px 30px rgb(0, 0, 2);
+    }
+
+    /* farther more effection
+    .service-card:hover img{
+        transform: scale(1.08);
+    } */
+
+    /* add your services button */
+    .seller-section {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .sell-button {
+        background: #6E473B;
+        /* background: linear-gradient(to right, #291C0E,  #BEB5A9); */
+        color: white;
+        text-decoration: none;
+        padding: 15px 30px;
+        border-radius: 30px;
+        transition: 0.3s;
+    }
+
+    .sell-button:hover {
+        box-shadow: 0px 15px 30px rgb(0, 0, 2);
+    }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Service</title>
+    <link rel="stylesheet" href="AddServicePage_style.css">
+</head>
+
+<body>
+
+    <section class="add-service">
+        <div class="form-container">
+            <h1>Add New Service</h1>
+
+            <form id="serviceForm">
+                <label>Service Title</label>
+                <input type="text" id="serviceTitle" placeholder="Enter service title" required>
+
+                <label> Category</label>
+                <select id="category" required>
+                    <option value=""> Select category </option>
+                    <option>Programming</option>
+                    <option>Legal</option>
+                    <option>Marketing</option>
+                    <option>Design</option>
+                    <option> Translation</option>
+                    <option> Education</option>
+                </select>
+
+                <label> Select Sub Category </label>
+                <select id="subCategory">
+                    <option> Select Sub Category</option>
+                </select>
+
+                <label>Price ($)</label>
+                <input type="number" id="price" placeholder="Enter price" min="5" max="500" required>
+
+                <label>Delivery Time</label>
+                <input type="number" id="duration" placeholder="Service duration in days" min="1" max="100" required>
+
+                <label>Service Description</label>
+                <textarea id="description" rows="5" placeholder="Describe your service" required></textarea>
+
+                <label> Service Image</label>
+                <input type="file">
+
+                <button type="submit"> Publish Service</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="AddServicePage_Script.js"></script>
+</body>
+</html>
