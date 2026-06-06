@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Tri_Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #E1D4C2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #291C0E;
+        }
+
+        .login-card {
+            background: #BEB5A9;
+            border-radius: 25px;
+            border: 1px solid #A78D78;
+            padding: 40px;
+            width: 400px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(41, 28, 14, 0.15);
+        }
+
+        h2 {
+            color: #291C0E;
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        p {
+            color: #6E473B;
+            font-weight: 500;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            background: #E1D4C2;
+            border: 1px solid #A78D78;
+            border-radius: 12px;
+            color: #291C0E;
+            outline: none;
+            font-family: 'Poppins';
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+
+        input::placeholder {
+            color: #A78D78;
+        }
+
+        option {
+            color: #291C0E;
+            background: #E1D4C2;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            background: linear-gradient(135deg, #6E473B, #A78D78);
+            border: none;
+            border-radius: 12px;
+            color: #E1D4C2;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(110, 71, 59, 0.3);
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        .footer-links {
+            margin-top: 25px;
+            color: #6E473B;
+        }
+
+        .footer-links a {
+            color: #291C0E;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .error-message {
+            color: #6E473B;
+            font-size: 14px;
+            margin-top: 10px;
+            display: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-card">
+        <h2>Register</h2>
+        <p>Join Tri_Developer Team</p>
+
+        <form id="registerForm">
+            <input type="text" id="nameInput" placeholder="Full Name" required>
+            <input type="email" id="signUpEmail" placeholder="Email Address" required>
+            <input type="password" id="signUpPassword" placeholder="Password" required>
+
+            <select id="roleSelect" required>
+                <option value="" disabled selected>Select Role</option>
+                <option value="seller">Seller</option>
+                <option value="buyer">Buyer</option>
+            </select>
+
+            <div id="signUpError" class="error-message"></div>
+
+            <button type="button" onclick="validateSignUp()">Register Now</button>
+        </form>
+
+        <div class="footer-links">
+            <p>Already have an account? <a href="login.html">Login</a></p>
+        </div>
+    </div>
+
+    <script>
+        console.log("Log: Registration page loaded successfully. Standing by for registration data.");
+
+        function validateSignUp() {
+            var name = document.getElementById("nameInput").value;
+            var email = document.getElementById("signUpEmail").value;
+            var password = document.getElementById("signUpPassword").value;
+            var role = document.getElementById("roleSelect").value;
+            var errorDiv = document.getElementById("signUpError");
+
+            console.log("Log: Register button clicked. Processing registration...");
+            console.log("Captured Data -> Name: " + name + " | Email: " + email + " | Role Chosen: " + role);
+
+            if (name === "" || email === "" || password === "" || role === "") {
+                console.warn("Validation Warning: One or more fields are empty in registration form.");
+                errorDiv.innerText = "All fields are required, please select your role!";
+                errorDiv.style.display = "block";
+            } else if (password.length < 6) {
+                console.warn("Validation Warning: Registration password is less than 6 characters.");
+                errorDiv.innerText = "Password must be at least 6 characters!";
+                errorDiv.style.display = "block";
+            } else {
+                console.log("Log: Account verification cleared. Transferring user back to login.html...");
+                errorDiv.style.display = "none";
+                alert("Account Created Successfully! Welcome to Tri_Developer.");
+                window.location.href = "../index.html";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
